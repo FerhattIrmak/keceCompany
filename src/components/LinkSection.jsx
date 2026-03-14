@@ -5,13 +5,13 @@ export default function LinkSection({ title, links }) {
   if (!links || links.length === 0) return null;
 
   return (
-    <div className="mb-3 relative z-10">
+    <div className="mb-4 md:mb-3 relative z-10">
       {title && (
         <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-gray-800 dark:text-gray-200 mb-2 text-center">
           {title}
         </h2>
       )}
-      <div className="space-y-1.5">
+      <div className="space-y-2 md:space-y-1.5">
         {links.map((link, index) => (
           <div key={index}>
             <SocialLinkButton

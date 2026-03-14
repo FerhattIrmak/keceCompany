@@ -49,22 +49,22 @@ export default function SocialLinkButton({ icon, label, href, color = 'bg-gradie
     <button
       onClick={handleClick}
       className={`
-        w-full px-4 py-2.5 md:px-7 md:py-3 rounded-xl font-bold text-white
+        w-full px-5 py-3 md:px-8 md:py-4 rounded-xl font-bold text-white
         ${color}
         shadow-lg shadow-amber-500/30 hover:shadow-2xl hover:shadow-amber-400/60
         transform hover:-translate-y-1 transition-all duration-300 ease-out
-        flex items-center justify-center gap-2 group
+        flex items-center justify-center gap-3 group
         active:scale-95 active:shadow-md
         hover:scale-105
         border border-amber-200/60 hover:border-amber-300/80
-        text-sm md:text-base tracking-wide
+        text-base md:text-lg tracking-wide
         backdrop-blur-md bg-opacity-90
       `}
     >
       <span className="group-hover:scale-125 group-hover:rotate-6 transition-all duration-300">
         {iconMap[icon] || iconMap.website}
       </span>
-      <span className="text-xs md:text-sm drop-shadow-sm">{label}</span>
+      <span className="text-sm md:text-base drop-shadow-sm">{label}</span>
     </button>
   );
 }

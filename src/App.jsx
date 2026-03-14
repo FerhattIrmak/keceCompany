@@ -101,7 +101,7 @@ function App() {
       {/* Lottie animated background */}
       <div className="absolute inset-0 pointer-events-none opacity-60 z-0">
         <DotLottieReact
-          src="https://lottie.host/1b5cc4d9-86e2-4613-8f0f-9cd0ad6ba2a1/hM6tUPzcgL.lottie"
+          src="https://lottie.host/557c9c35-44f3-46e9-ad2f-f5427c7ca977/ecZITsTYMD.lottie"
           loop
           autoplay
         />
@@ -150,7 +150,7 @@ function App() {
       </header>
 
       {/* Main content */}
-      <main className="w-full max-w-md md:max-w-xl lg:max-w-2xl mx-auto px-3 md:px-6 pt-0 pb-3 relative z-10">
+      <main className="w-full max-w-md md:max-w-xl lg:max-w-2xl mx-auto px-4 md:px-6 pt-3 pb-6 md:pt-0 md:pb-3 relative z-10">
         {/* Profile Section */}
         <ProfileCard {...profileData} />
 
