@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import ProfileCard from './components/ProfileCard'
 import LinkSection from './components/LinkSection'
@@ -6,20 +6,24 @@ import Footer from './components/Footer'
 import profileImage from './631693365_17928943335190279_2181172716929359133_n.jpg'
 
 function App() {
-  const [isDark, setIsDark] = useState(false)
-
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
+    document.documentElement.classList.add('dark')
+    document.title = 'KeceCompany'
+
+    const existingLink = document.querySelector("link[rel='icon']")
+    const link = existingLink || document.createElement('link')
+    link.rel = 'icon'
+    link.type = 'image/png'
+    link.href = profileImage
+    if (!existingLink) {
+      document.head.appendChild(link)
     }
-  }, [isDark])
+  }, [])
 
   // Profile configuration
   const profileData = {
     name: 'KeceCompany',
-    bio: '🤝 Reklam, iş birliği ve mekan tanıtımları',
+    bio: '🤝 Reklam | İş Birliği | Mekan Tanıtımı',
     image: profileImage,
     verified: true,
   }
@@ -43,7 +47,7 @@ function App() {
     {
       icon: 'tiktok',
       label: 'TikTok',
-      href: 'https://l.instagram.com/?u=https%3A%2F%2Fwww.tiktok.com%2F%40kececompany%3F_r%3D1%26_t%3DZS-94d6ncazIjF%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn28f2KD69gzI02R7-Qb8t4uSgTYGDwkR3ToJUk2Vi-K7cqqVx2_JTpAjkZ8w_aem_TvJmHTxim9hl5W_LMpdnuw&e=AT5ZT7OVsXBBj834gobKTLcLyIr0G0hVVM5rVtktnn2tGCioETIrN3NyyAOI7chbVPl0B8UqilXF34eD0vYfN2ni_UQ0wlVQsMzQoNlg7g',
+      href: 'https://l.instagram.com/?u=https%3A%2F%2Fwww.tiktok.com%2F%40kececompany%3F_r%3D1%26_t%3DZS-94d6ncazIjF%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnJK_Jv_VzhRz_bvVp5TiAepH-okwYd40EB4IsRZdnFOWWuaXPRRpDOIYU5PE_aem_J_BnyPZGW2cYyFuhIjn_0w&e=AT4yYUGfHgj9RNIoJdGayD8QqowdhZ8lfKwiWftqUfLSdzm26KLjp1qtV6EwODvMK__uHjum4S113vMebZ5QDqbwO2WXI2B_BX4ZEOH4MA',
       // TikTok dark with subtle teal accent
       color: 'bg-gradient-to-r from-black via-slate-900 to-teal-400',
     },
@@ -72,7 +76,7 @@ function App() {
       color: 'bg-gradient-to-r from-emerald-500 via-teal-400 to-amber-400',
     },
     {
-      icon: 'website',
+      icon: 'instagram',
       label: 'Güzellik Merkezimiz (Büşra Güzellik)',
       href: 'https://instagram.com/busraguzellikfethiye',
       color: 'bg-gradient-to-r from-amber-400 via-fuchsia-500 to-rose-500',
@@ -86,17 +90,9 @@ function App() {
   ]
 
   return (
-    <div className={`min-h-screen transition-all duration-700 ease-in-out relative overflow-hidden ${
-      isDark
-        ? 'bg-black'
-        : 'bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100'
-    }`}>
+    <div className="min-h-screen transition-all duration-700 ease-in-out relative overflow-hidden bg-black">
       {/* Subtle gradient overlay with smooth transition */}
-      <div className={`absolute inset-0 pointer-events-none transition-all duration-700 ease-in-out ${
-        isDark
-          ? 'bg-gradient-to-b from-gray-900 via-black to-black opacity-100'
-          : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 opacity-80'
-      }`}></div>
+      <div className="absolute inset-0 pointer-events-none transition-all duration-700 ease-in-out bg-gradient-to-b from-gray-900 via-black to-black opacity-100"></div>
 
       {/* Lottie animated background */}
       <div className="absolute inset-0 pointer-events-none opacity-60 z-0">
@@ -108,46 +104,10 @@ function App() {
       </div>
       
       {/* Spotlight effect - animated blobs with smooth transitions */}
-      {isDark ? (
-        <>
-          <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-700 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-pulse transition-all duration-700 z-10"></div>
-          <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-blue-700 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob animation-delay-2000 transition-all duration-700 z-10"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-4000 transition-all duration-700 z-10"></div>
-          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-pink-600 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-float transition-all duration-700 z-10"></div>
-        </>
-      ) : (
-        <>
-          <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-purple-400 to-blue-300 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-pulse transition-all duration-700 z-10"></div>
-          <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-gradient-to-br from-pink-300 to-purple-300 rounded-full mix-blend-screen filter blur-2xl opacity-45 animate-blob animation-delay-2000 transition-all duration-700 z-10"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-gradient-to-br from-blue-300 to-indigo-300 rounded-full mix-blend-screen filter blur-3xl opacity-40 animate-blob animation-delay-4000 transition-all duration-700 z-10"></div>
-          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-to-br from-purple-300 to-pink-200 rounded-full mix-blend-screen filter blur-2xl opacity-35 animate-float transition-all duration-700 z-10"></div>
-        </>
-      )}
-      {/* Header with dark mode toggle */}
-      <header className="p-1 flex justify-end relative z-20">
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="p-3 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-        >
-          {isDark ? (
-            <svg className="w-7 h-7 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="5" />
-              <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          ) : (
-            <svg className="w-7 h-7 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-          )}
-        </button>
-      </header>
+      <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-700 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-pulse transition-all duration-700 z-10"></div>
+      <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-blue-700 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob animation-delay-2000 transition-all duration-700 z-10"></div>
+      <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-4000 transition-all duration-700 z-10"></div>
+      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-pink-600 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-float transition-all duration-700 z-10"></div>
 
       {/* Main content */}
       <main className="w-full max-w-md md:max-w-xl lg:max-w-2xl mx-auto px-4 md:px-6 pt-3 pb-6 md:pt-0 md:pb-3 relative z-10">
