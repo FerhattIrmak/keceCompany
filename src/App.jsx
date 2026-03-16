@@ -61,7 +61,7 @@ function App() {
     {
       icon: 'twitter',
       label: 'Twitter / X',
-      href: 'https://twitter.com/kececompany',
+      href: 'https://x.com/sonerkece1?s=21',
       // Twitter blue (X is mostly black, but blue is more recognizable)
       color: 'bg-gradient-to-r from-sky-500 to-sky-700',
     },
