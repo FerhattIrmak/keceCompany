@@ -40,14 +40,14 @@ function App() {
     {
       icon: 'facebook',
       label: 'Facebook',
-      href: 'https://l.instagram.com/?u=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1B1mcZFjM1%2F%3Fmibextid%3DwwXIfr%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio&e=AT6h5y-6Acb5CGukd5-cMf5OGF8s6QhUbGVOsRBS0mllxHx36_ZD1NfdOGjn6iXaIuaHoC0IfQtr2HOpf0WrzQxJgDODQT1I4urtf_OqaQ',
+      href: 'https://www.facebook.com/kececompany?mibextid=wwXIfr&rdid=4tL8CbQVAfHN47xJ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1B1mcZFjM1%2F%3Fmibextid%3DwwXIfr%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio',
       // Facebook blue
       color: 'bg-gradient-to-r from-blue-500 to-blue-700',
     },
     {
       icon: 'tiktok',
       label: 'TikTok',
-      href: 'https://l.instagram.com/?u=https%3A%2F%2Fwww.tiktok.com%2F%40kececompany%3F_r%3D1%26_t%3DZS-94d6ncazIjF%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnJK_Jv_VzhRz_bvVp5TiAepH-okwYd40EB4IsRZdnFOWWuaXPRRpDOIYU5PE_aem_J_BnyPZGW2cYyFuhIjn_0w&e=AT4yYUGfHgj9RNIoJdGayD8QqowdhZ8lfKwiWftqUfLSdzm26KLjp1qtV6EwODvMK__uHjum4S113vMebZ5QDqbwO2WXI2B_BX4ZEOH4MA',
+      href: 'https://www.tiktok.com/@kececompany?_r=1&_t=ZS-94d6ncazIjF&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGniXiprAd7cEuyENNvk4e9uRWO9QBZs3hPscCTB_Q5Km6efvWIgvBIA23R2Gw_aem_k-VNdTgZgtP6Y5a88VM04Q',
       // TikTok dark with subtle teal accent
       color: 'bg-gradient-to-r from-black via-slate-900 to-teal-400',
     },
